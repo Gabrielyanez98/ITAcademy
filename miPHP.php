@@ -69,16 +69,50 @@
   echo "</section>";
   
   echo "<br><br><h1>Nivel 3 </h1>";
+
+  echo "<h1>Ejercicio 1 </h1>";
   
+  for ($i = 0; $i < count($miNuevoArray); ++$i){
+    echo "<p>Los valores de mi array son: " . $miNuevoArray[$i] . "</p>";
+  }
+
+  echo "<h1>Ejercicio 2 </h1>";
+
+  $X = 10;
+  $Y = 5;
+  $N = 15.5;
+  $M = 20.3;
+
+  echo "<p>El valor de X es: " . $X . "</p>";
+  echo "<p>El valor de y es: " . $Y . "</p>";
+  echo "<p>La suma de X e Y es: " . ($X + $Y) . "</p>";
+
+  echo "<p>La resta de X e Y es: " . ($X + $Y) . "</p>";
+  echo "<p>El producto de X e Y es: " . ($X * $Y) . "</p>";
+  echo "<p>La división de X e Y es: " . ($X/ $Y) . "</p>";
+  echo "<p>El módulo es: " . ($X%$Y) ."</p>";
+
+  echo "<p>El valor de X es: " . $N . "</p>";
+  echo "<p>El valor de y es: " . $M . "</p>";
+  echo "<p>La suma de X e Y es: " . ($N + $M) . "</p>";
+
+  echo "<p>La resta de X e Y es: " . ($N + $M) . "</p>";
+  echo "<p>El producto de X e Y es: " . ($N * $M) . "</p>";
+  echo "<p>La división de X e Y es: " . ($N/ $M) . "</p>";
+  echo "<p>El módulo es: " . ($N%$M) . "</p>";
+
+  echo "<p> el doble de: " . $X . "es de: " . ($X*$X) . "</p>";
+  echo "<p> el doble de: " . $Y . "es de: " . ($Y*$Y) . "</p>";
+  echo "<p> el doble de: " . $M . "es de: " . ($M*$M) . "</p>";
+  echo "<p> el doble de: " . $N . "es de: " . ($N*$N) . "</p>";
+
+  echo "<p>La suma de todas las variables es de: " . ($X+$Y+$N+$M) ."</p>";
+  
+  echo "<p>El producto de todas las variables es de: " . ($X*$Y*$N*$M) ."</p>";
 
 ?>
 
-<?php
 
-  
-
-
-?>
 
 
 </body>
