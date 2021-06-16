@@ -129,7 +129,34 @@
 
         }
 
-        erastotenes(50);
+        erastotenes(20);
+
+        function otroErastotenes($rango){
+
+            for($i = 2; $i <= $rango; $i++){
+                $miArray[$i] = true;
+            }
+
+            for ($n = 2; $n <= $rango; $n++){
+                if($miArray[$n]){
+                    
+                    for($i = $n * $n; $i <= $rango;$i += $n){
+                        $miArray[$i] = false;
+                    }
+                }
+            }
+
+            for($i = 2; $i <= $rango; $i++){
+                if($miArray[$i]){
+                    echo "<br>" . $i;
+                }
+               
+            }
+        }
+
+        otroErastotenes(50);
+
+
 
     ?>
 </body>
