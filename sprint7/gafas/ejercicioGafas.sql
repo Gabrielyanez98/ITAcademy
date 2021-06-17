@@ -30,7 +30,11 @@ CREATE TABLE marca (
     fkProveedores INT NOT NULL,
     
     marca VARCHAR(40) NOT NULL,
-    
+    graduacion INT NOT NULL,
+    tipoMontura VARCHAR(40) NOT NULL,
+    colorMontura VARCHAR(40) NOT NULL,
+    colorVidrio VARCHAR(40) NOT NULL,
+    precio INT NOT NULL,
     
     FOREIGN KEY (fkProveedores) REFERENCES proveedores(idProveedores)
 );
@@ -38,12 +42,6 @@ CREATE TABLE marca (
 CREATE TABLE gafas (
 	idGafas INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     fkMarca INT NOT NULL,
-    
-    graduacion INT NOT NULL,
-    tipoMontura VARCHAR(40) NOT NULL,
-    colorMontura VARCHAR(40) NOT NULL,
-    colorVidrio VARCHAR(40) NOT NULL,
-    precio INT NOT NULL,
     
     nombreGafas VARCHAR(40) NOT NULL,
     FOREIGN KEY (fkMarca) REFERENCES marca (idMarca)
