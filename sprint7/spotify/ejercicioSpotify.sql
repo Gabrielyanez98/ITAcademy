@@ -124,11 +124,11 @@ CREATE TABLE playlist_compartida_usuarios(
 
 CREATE TABLE favoritos(
 	fkUsuario INT NOT NULL,
-    fkUsuario INT NOT NULL,
+    fkAlbum INT NOT NULL,
     fkCancion INT NOT NULL,
     
     FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
-    FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
+    FOREIGN KEY (fkAlbum) REFERENCES album(idAlbum),
     FOREIGN KEY (fkCancion) REFERENCES cancion(idCancion)
 	
 );
