@@ -1,27 +1,54 @@
-<?php
 
-$conexion = mysqli_connect("localhost", "root", "","php_m8");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <?php
+        require_once 'controllers/compra.php';
+        $compra = new Compra();
 
-if($conexion->connect_error)
-    die("PRoblemas con la conexión a la base de datos");
+        $compras = $compra->list();
 
-/*$conexion->query("INSERT INTO compra(nom, quantitat,preu) VALUES ('Plátano', 3, 15)") or die($conexion->error);
+    ?>
 
-$conexion->query("INSERT INTO compra(nom, quantitat,preu) VALUES ('Manzana', 5, 20)") or die($conexion->error);
-
-$conexion->query("INSERT INTO compra(nom, quantitat,preu) VALUES ('Tomate', 4, 18)") or die($conexion->error);*/
+    
 
 
-class Taula {
-    function introducirProducto($conexion, $nombreUnidad,$cantidad, $precioUnidad){
-        $conexion->query("INSERT INTO compra(nom,quantitat,preu) VALUES ('$nombreUnidad', $cantidad, $precioUnidad)") or die($conexion->error);
-    }   
-}
 
-$aniadirProducto = new Taula;
+    <h1>Productos</h1>
 
-$aniadirProducto-> introducirProducto($conexion,'Manzana', 4, 18);
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre producto comprado</th>
+                <th>Cantidad</th>
+                <th>precio</th>
+                <th>total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($compras as $compra): ?>
+            <tr>
+                <td>
+                    <?php echo $compra['nom'] ?>
+                </td>
+                <td>
+                    <?php echo $compra['quantitat'] ?>
+                </td>
+                <td>
+                    <?php echo $compra['preu'] ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 
-$conexion->close();
-
-?>
+    <button><a href="insereix.php">Añadir nuevo producto</a></button>
+</body>
+</html>
