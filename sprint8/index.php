@@ -26,6 +26,7 @@
     <table>
         <thead>
             <tr>
+                <th></th>
                 <th>Nombre producto comprado</th>
                 <th>Cantidad</th>
                 <th>precio</th>
@@ -35,6 +36,7 @@
         <tbody>
             <?php foreach($compras as $compra): ?>
             <tr>
+                <th><?php echo $compra['id'] ?></th>
                 <td>
                     <?php echo $compra['nom'] ?>
                 </td>
@@ -44,11 +46,16 @@
                 <td>
                     <?php echo $compra['preu'] ?>
                 </td>
+                <td>
+                    <button><a href="modificar.php?id=<?php echo $compra['id'] ?>">Modificar</a></button>
+                    <button><a href="">Eliminar</a></button>
+                </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 
     <button><a href="insereix.php">Añadir nuevo producto</a></button>
+    
 </body>
 </html>

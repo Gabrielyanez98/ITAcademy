@@ -29,7 +29,34 @@
             $connection -> close($mysql);
 
             return $result;
+        }
 
+        function show($id){
+            $connection = new Connection();
+
+            $mysql = $connection->create();
+
+            $sql = "SELECT * FROM compra WHERE id = $id";
+            $result = $mysql-> query($sql);
+
+            $compra = $result->fetch_assoc();
+
+            $connection -> close($mysql);
+
+            return $compra;
+        }
+
+        function update($request){
+            $connection = new Connection();
+
+            $mysql = $connection -> create();
+
+            $sql = "UPDATE compra SET nom = '{$request['nom']}', quantitat = '{$request['quantitat']}', preu = '{$request['preu']}' WHERE id = '{$request['id']}'";
+            $result = $mysql->query($sql);
+
+            $connection-> close($mysql);
+
+            return $result;
         }
     }
 ?>
