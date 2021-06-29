@@ -27,10 +27,10 @@
         <thead>
             <tr>
                 <th></th>
-                <th>Nombre producto comprado</th>
+                <th>Nombre</th>
                 <th>Cantidad</th>
                 <th>precio</th>
-                <th>total</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -48,7 +48,7 @@
                 </td>
                 <td>
                     <button><a href="modificar.php?id=<?php echo $compra['id'] ?>">Modificar</a></button>
-                    <button><a href="">Eliminar</a></button>
+                    <button><a href="myRequest/deleteRequest.php?id=<?php echo $compra['id']?>">Eliminar</a></button>
                 </td>
             </tr>
             <?php endforeach; ?>

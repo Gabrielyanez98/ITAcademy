@@ -58,5 +58,18 @@
 
             return $result;
         }
+
+        function delete($id){
+            $connection = new Connection();
+
+            $mysql = $connection->create();
+
+            $sql = "DELETE FROM compra WHERE id = $id";
+            $result = $mysql->query($sql);
+
+            $connection-> close($mysql);
+
+            return $result;
+        }
     }
 ?>
