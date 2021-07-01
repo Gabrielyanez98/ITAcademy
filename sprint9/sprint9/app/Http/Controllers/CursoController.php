@@ -8,8 +8,9 @@ class CursoController extends Controller
 {
     //
     public function index(){
-       return view('curso');    
-    }
+        $indice = "hola";
+       return view('curso')->with('curso', $indice);    
+    } 
 
     public function miCurso($curso){
         return "Estás en el curso de: $curso";
