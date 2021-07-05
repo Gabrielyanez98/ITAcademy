@@ -9,4 +9,8 @@ class CreateController extends Controller
     public function create(){
         return view('create');
     }
+
+    public function form(){
+        return view('form');
+    }
 }

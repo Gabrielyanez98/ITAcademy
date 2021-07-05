@@ -7,13 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-
-    <form action="{{route('catalog.create')}}" method="POST">
-        <label>Introduce el nombre de tu libro:
+    <form action="">
+        <label>Modifica el libro: {{$libro}}
             <input type="text" name="libro">
         </label>
-        <button type="submit">Enviar libro</button>
+        <button type="submit">Modificar libro</button>
     </form>
-
 </body>
 </html>

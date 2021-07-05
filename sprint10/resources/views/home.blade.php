@@ -8,5 +8,16 @@
 </head>
 <body>
     <h1>Página principal</h1>
+
+    <a href="{{route('inscribirse')}}">Inscribirse</a>
+    <br>
+    <a href="{{route('login')}}">Iniciar sesión</a>
+    <br>
+    <a href="{{route('catalog.form')}}">Ir a enviar un nuevo libro</a>
+    <br>
+    <a href="{{route('index')}}">Ver libros</a>    
+
+    
+    
 </body>
 </html>

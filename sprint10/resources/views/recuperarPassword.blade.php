@@ -7,13 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    
-
+    <h3>Indica un número de teléfono o un correo electrónico para recuperar tu contraseña</h3>
     <form action="">
-        <label>Modifica el libro: {{$libro}}
-            <input type="text" name="libro">
-        </label>
-        <button type="submit">Modificar libro</button>
+        <label for="">Teléfono: <input type="phone"></label><br>
+        <label for="">Correo electrónico: <input type="gmail"></label>
     </form>
+    <button type="submit">Enviar</button>
 </body>
 </html>
