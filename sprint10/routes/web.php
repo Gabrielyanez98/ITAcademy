@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CookieController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\HomeController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\InscribirseController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\recuperarPasswordController;
 use App\Http\Controllers\ShowController;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
@@ -44,12 +46,15 @@ Route::get('catalog/edit/{id}', [EditController::class, 'editVista'])->name('cat
 
 Route::get('catalog/show/{id}', [ShowController::class, 'show']);
 
+Route::get('error', function(){
+    return view('error');
+});
 
-
+Route::post('cookie-form', [LoginController::class, 'saveCookie'])->name('cookie.form');
 
 
 Route::fallback(function () {
-    return "Error. Esta página no existe";
+    return redirect('error');
 }); 
 
 

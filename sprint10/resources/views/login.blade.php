@@ -8,12 +8,13 @@
 </head>
 <body>
     
-    <form action="">
-        <label for="">Nombre de usuario <input type="text"></label>
+    <form action="{{route('cookie.form')}}" method="POST">
+    @csrf
+        <label for="">Nombre de usuario <input type="text" name="usuario"></label>
         <br>
-        <label for="">Contraseña <input type="password"></label>
+        <label for="">Contraseña <input type="password" name="password" ></label>
         <br>
-        <button>Iniciar sesión</button>
+        <button type="submit">Iniciar sesión</button>
     </form>
 
     <h3><a href="{{route('recuperarPassword')}}">¿Has olvidado la contraseña? ¡Haz click aquí! </a></h5>
