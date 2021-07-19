@@ -55,6 +55,4 @@ class EmpleadosController extends Controller
         return redirect()->route('empleados.index', $empleado);
 
     }
-
-    
 }
