@@ -13,12 +13,12 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             @if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+    {{-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> --}}
         @auth
             {{-- <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a> --}}
-
-            <div>¡BIENVENIDO@!{{ Auth::user()->name }}</div>
-            <a href="{{route('equipo.create')}}">Crear equipo</a>
+        
+            <p class="titleWelcome">¡BIENVENIDO@!{{ Auth::user()->name }}</p> 
+            <button type="button" class="btn btn-info"><a href="{{route('equipo.create')}}" class="botonEnlace">Crear equipo</a> </button>
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -29,16 +29,16 @@
                     {{ __('Log Out') }}
             </button>
             </form>
-           
+          
 
         @else
-            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline loginRegister">Iniciar sesión</a>
+        <button type="button" class="btn btn-success"><a href="{{ route('login') }}" class="text-sm text-gray-700 underline loginRegister">Iniciar sesión</a></button>
 
             @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline loginRegister">Registrarse</a>
+            <button type="button" class="btn btn-success"><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline loginRegister">Registrarse</a></button>
             @endif
         @endauth
-    </div>
+    {{-- </div> --}}
 @endif
           </a>
         </div>
@@ -54,7 +54,7 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Equipo ocal</th>
+                <th scope="col">Equipo Local</th>
                 <th scope="col">Goles equipo Local</th>
                 <th scope="col">Goles equipo visitante</th>
                 <th scope="col">Equipo visitante</th>
@@ -71,7 +71,7 @@
                 <td>{{$equipo->equipoVisitante}}</td>
 
                 @auth
-                <td><button><a href="{{route('equipo.edit', $equipo->id)}}">Editar</a></button></td>
+                <td><button type="button" class="btn btn-info"><a href="{{route('equipo.edit', $equipo->id)}}" class="botonEnlace">Editar</a></button></td>
                 @endauth
               </tr>
               
@@ -81,27 +81,30 @@
 
     </section>
     
-    
-    
-    
-
-
-
-
 
 </body>
 
 <style>
     .loginRegister {
-        color: green;
+        color: white;
         text-decoration: none;
         font-size: 20px;
         margin: auto 10px;
+    }
+    .titleWelcome{
+      text-transform: uppercase;
+       font-size: 20px;
+       background-color: aqua;
 
     }
+ 
     h1{
         text-align: center;
         color: aqua;
+    }
+    .botonEnlace{
+      text-decoration: none;
+      color: black;
     }
 </style>
 
